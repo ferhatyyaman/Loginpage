@@ -1,6 +1,51 @@
 .App {
   text-align: center;
+  
 }
+.loginsayfasi{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  position: relative;
+  bottom: 100px;
+  letter-spacing: 5px;
+  
+}
+.form-inner{
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 600px;
+  padding: 150px;
+  border-radius:8px;
+  
+  
+}
+.form label{
+  position:absolute;
+  left: 100px;
+}
+
+.formhandler{
+  border: 1px solid black;
+  border-radius: 5px;
+  position: relative;
+  left: 500px;
+  top: 50px;
+  width: 600px;
+  height: 500px;
+  background-color:beige;
+  
+}
+.input{
+  letter-spacing: 5px;
+  width: 190px;
+  position:absolute;
+  bottom: 100px;
+  left: 205px;
+}
+
+
+
 
 .App-logo {
   height: 40vmin;

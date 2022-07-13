@@ -1,13 +1,15 @@
 import React from 'react'
 import { useState } from 'react';
+import { Form,FormGroup,Label} from 'reactstrap';
 
-const LoginForm = (Login, error) => {
+const LoginForm = () => {
     const [details, setDetails] = useState({ name: "", email: "", password: "" })
+    const [submit ,setSubmit]=useState(false);
 
     const submitHandler = (event) => {
         event.preventDefault();
-        Login(details);
-        
+        setSubmit(true);
+
     }
     const nameHandler = (event) => {
         setDetails({ ...details, name: event.target.value })
@@ -21,30 +23,30 @@ const LoginForm = (Login, error) => {
 
     return (
         <div>
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} className="formhandler">
                 <div className='form-inner'>
-                    <h2>Login Sayfası</h2>
+                    <h2 className='loginsayfasi'>Login Sayfası</h2>
 
-                    {(error !== "") ? (<div className='error'>{error}</div>) : ""}
-
-                    <div className='form-group'>
-                        <lable>name:</lable>
-                        <input type="text" name='name' id='name' onChange={nameHandler} value={details.name} />
-                    </div>
-
-                    <div className='form-group'>
-                        <lable>email:</lable>
-                        <input type="email" name='email' id='email' onChange={emailHandler} value={details.email} />
-                    </div>
-                    <br /><br />
                     
-                    <div className='form-group'>
-                        <lable>Password:</lable>
-                        <input type="password" name='password' id='password' onChange={passwordHandler} value={details.password} />
-                    </div>
-                    <br /><br />
+                    <Form className='form'>
+                        <FormGroup>
+                            <Label>Name</Label>
+                            <input type="text" name='name' id='name' placeholder="Name" onChange={nameHandler} value={details.name} />
+                        </FormGroup>
+                        {' '}
+                        <FormGroup>
+                            <Label>Email</Label>
+                            <input type="email" name='email' id='email' placeholder="Email" onChange={emailHandler} value={details.email} />
+                        </FormGroup>
+                        {' '}
+                        <FormGroup>
+                            <Label>Password</Label>
+                            <input type="password" name='password' id='password' placeholder="Password" onChange={passwordHandler} value={details.password} />
+                        </FormGroup>
+                        {' '}
+                    </Form>
 
-                    <input type="submit" value="LOGIN" />
+                    <input className='input' type="submit" value="LOGIN" />
 
                 </div>
             </form>
@@ -53,3 +55,5 @@ const LoginForm = (Login, error) => {
 };
 
 export default LoginForm;
+
+

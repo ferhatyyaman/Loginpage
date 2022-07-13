@@ -1,45 +1,70 @@
 import './App.css';
-import React, {useState} from 'react';
+import React from 'react';
 import LoginForm from './components/LoginForm';
+import Anasayfa from './components/Anasayfa';
+import Iletisim from './components/Iletisim';
+import Hakkimizda from './components/Hakkimizda';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link,Route,Routes} from 'react-router-dom'
+import { Nav,NavItem,NavLink,NavbarText,Navbar,NavbarBrand,Collapse,NavbarToggler } from "reactstrap";
 
 
 function App() {
-  const adminUser={
-    email:"admin@gmail.com",
-    password:"admin"
-  }
-
-  const[user,setUser]=useState({name:"",email:""});
-  const[error,setError]=useState("");
-
-  const Login=details =>{
-    console.log(details);
-
-    if(details.email===adminUser.email && details.password===adminUser.password){
-      console.log("giriş başarılı");
-      setUser({
-        email:details.email
-      });
-    }
-    else{
-      console.log("giriş başarısız");
-      setError("hatalı");
-    }
-  }
-  const Logout=()=>{
-    setUser({name:"",email:""});
-  }
-
   return (
-    <div>
-      {(user.email !=="")?(
-        <div>
-          <h2>--</h2>
-          <button onClick={Logout}>Logout</button>
-          </div>
-      ):(
-        <LoginForm Login={Login} error={error}/>
-      )}
+    <div className='App'>
+
+<Navbar color="light" expand="md" light>
+    <NavbarBrand>
+    <Link to="/">Anasayfa</Link> 
+    </NavbarBrand>
+    <NavbarToggler onClick={function noRefCheck(){}} />
+    <Collapse navbar>
+      <Nav
+        className="me-auto"
+        navbar
+      >
+        <NavItem>
+          <NavLink>
+          <Link to="/Hakkimizda">Hakkimizda</Link>
+          </NavLink>
+        </NavItem>
+
+        <NavItem>
+          <NavLink>
+          <Link to="/Iletisim">Iletisim</Link> 
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink>
+          <Link to="/LoginForm">LoginForm</Link> 
+          </NavLink>
+        </NavItem>
+        
+       
+      </Nav>
+      <NavbarText>
+      <NavLink href="https://github.com/ferhatyyaman">
+            GitHub
+          </NavLink>
+      </NavbarText>
+    </Collapse>
+  </Navbar>
+
+
+  <Routes>
+         <Route path="/Anasayfa"  element={<Anasayfa/>}></Route>
+        <Route path="/Iletisim" element={<Iletisim/>}></Route>
+        <Route path="/Hakkimizda" element={<Hakkimizda/>}></Route>
+        <Route path="/LoginForm" element={ <LoginForm/>}></Route>
+</Routes>
+
+
+     
+
+
+
+
+
     </div>
   );
 }
