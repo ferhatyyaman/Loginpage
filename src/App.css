@@ -1,51 +1,67 @@
 .App {
   text-align: center;
-  
-}
-.loginsayfasi{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-align: center;
-  position: relative;
-  bottom: 100px;
-  letter-spacing: 5px;
-  
-}
-.form-inner{
-  text-align: center;
-  display: block;
-  width: 100%;
-  height: 600px;
-  padding: 150px;
-  border-radius:8px;
-  
-  
-}
-.form label{
-  position:absolute;
-  left: 100px;
+  background-color:#C2D7E8;
+  height: 750px;
 }
 
-.formhandler{
-  border: 1px solid black;
-  border-radius: 5px;
-  position: relative;
-  left: 500px;
-  top: 50px;
-  width: 600px;
-  height: 500px;
-  background-color:beige;
-  
-}
-.input{
+  .formhandler{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+    left: 450px;
+    top: 40px;
+    width: 600px;
+    height: 600px;
+    display: block;
+    padding: 150px;
+    background-color:#C2D7E8;
+    
+  }
+.button{
   letter-spacing: 5px;
-  width: 190px;
   position:absolute;
-  bottom: 100px;
+  bottom: 90px;
   left: 205px;
+  border-radius: 50px;
+  width: 180px;
+  height: 60px;
+  background-color: #1B99E5;
+  color: white;
+  border: 0px solid #1B99E5;
+  
 }
-
-
-
+.icon{
+  position: relative;
+  bottom:100px;
+}
+.password{
+  border-radius: 50px;
+  width: 300px;
+  height: 60px;
+  position: relative;
+  bottom: 85px;
+  border: 0px solid white;
+}
+.email{
+  border-radius: 50px;
+  width: 300px;
+  height: 60px;
+  position: relative;
+  bottom: 90px;
+  border: 0px solid white;
+}
+.check{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  bottom: 70px;
+  
+}
+.check a{
+  margin: 0px 10px;
+}
 
 .App-logo {
   height: 40vmin;
