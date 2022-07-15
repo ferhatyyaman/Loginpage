@@ -1,14 +1,24 @@
 import React from 'react'
 import { useState } from 'react';
 import { Form,FormGroup,Label} from 'reactstrap';
+import {useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
     const [details, setDetails] = useState({ name: "", email: "", password: "" })
-    const [submit ,setSubmit]=useState(false);
+    const nagivate=useNavigate ();
+    const adminUser={
+        email:"admin@gmail.com",
+        password:"admin"
+    } 
 
     const submitHandler = (event) => {
         event.preventDefault();
-        setSubmit(true);
+        if(details.email===adminUser.email && details.password===adminUser.password){
+            nagivate("/");
+        }
+        else{
+            nagivate("/LoginForm");
+        }
 
     }
     const nameHandler = (event) => {
