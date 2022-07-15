@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import { Form, FormGroup,Label,Input } from 'reactstrap';
 import { useNavigate } from 'react-router-dom'
-import { BsPersonFill,BsUnlockFill } from "react-icons/bs";
+import { BsPersonFill} from "react-icons/bs";
+
 
 
 const LoginForm = () => {
@@ -34,6 +35,9 @@ const LoginForm = () => {
         setDetails({ ...details, password: event.target.value })
     }
 
+
+   
+
     return (
         <div className='LoginDiv'>
             <form onSubmit={submitHandler} className="formhandler">
@@ -45,22 +49,25 @@ const LoginForm = () => {
                     <Form className='form'>
                         <FormGroup>
 
-                            <input className='email' type="email" name='email' id='email' placeholder=" &#xF002; Email" onChange={emailHandler} value={details.email} />
+                            <input className='email' type="email" name='email' id='email' placeholder="&#xF023; email" onChange={emailHandler} value={details.email} />
                         </FormGroup>
                         {' '}
                         <FormGroup>
 
-                            <input className='password' type="password" name='password' id='password' placeholder="&#xF002; *******" onChange={passwordHandler} value={details.password} />
+                            <input className='password' type="password" name='password' id='password' placeholder="&#xf009; password" onChange={passwordHandler} value={details.password} />
                         </FormGroup>
                         {' '}
                     </Form>
                     <div className='check'>
                     <FormGroup>
+                       
                         <Input id="exampleCheck" name="check" type="checkbox" />
                         <Label check for="exampleCheck"><a href="#">Remember me </a></Label>
+                         
+                        
                             
                     </FormGroup>
-                    <a href="#" >  forgot password? </a> 
+                    <a href="#" >forgot password? </a> 
                     </div>
 
                     <input className='button' type="submit" value="LOGIN" />
