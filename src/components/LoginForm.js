@@ -49,12 +49,12 @@ const LoginForm = () => {
                     <Form className='form'>
                         <FormGroup>
 
-                            <input className='email' type="email" name='email' id='email' placeholder="&#xF023; email" onChange={emailHandler} value={details.email} />
+                            <input className='email' type="email" name='email' id='email' placeholder="  &#xF007;  |  USERNAME"  onChange={emailHandler} value={details.email} />
                         </FormGroup>
                         {' '}
                         <FormGroup>
 
-                            <input className='password' type="password" name='password' id='password' placeholder="&#xf009; password" onChange={passwordHandler} value={details.password} />
+                            <input className='password' type="password" name='password' id='password' placeholder="  &#xf023;  |  ********" onChange={passwordHandler} value={details.password} />
                         </FormGroup>
                         {' '}
                     </Form>
